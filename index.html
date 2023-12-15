@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes on What Comes After</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #212020;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        #intro-text,
+        #rectangles {
+            opacity: 0;
+            transform: translateY(0);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        #title {
+            opacity: 0;
+            transform: translateY(0);
+            transition: opacity 5s ease, transform 5s ease;
+        }
+
+        #title {
+            font-size: 24px;
+            margin-top: 50vh;
+            position: sticky;
+            top: 0;
+            background-color: #212020;
+            padding: 10px;
+            z-index: 1;
+        }
+
+        #intro-text {
+            text-align: center;
+            padding: 20px;
+            margin-left: 435px;
+            margin-right: 435px;
+            margin-top: 50vh;
+            position: sticky;
+            top: 50px;
+            background-color: #212020;
+            z-index: 1;
+        }
+
+        #rectangles {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 10vh;
+        }
+
+        .rectangle {
+            width: 375px;
+            height: 400px;
+            margin: 20px;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-left: 20px solid white;
+            border-right: 20px solid white;
+            border-top: 10px solid white;
+            border-bottom: 10px solid white;
+        }
+
+        .rectangle a {
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            background-color: #212020;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .rectangle-text {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #212020;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="title">Notes on What Comes After</div>
+
+    <div id="intro-text">
+        <p>Death, despite its inevitability, is one of the hardest things people face - both going through it, and moving past it. 
+            It's fundamental. It's Natural. It's an inevitability wrought with uncertainties, like</p>
+
+        <p>"Why did it Happen?" "what happens next?" "Who has the right?"</p>
+
+        <p> It's also a definitive moment in the lives of those around it, and it isn't always bad, or good.
+            It's an event that forces those around it to bring back the memory of what was, in all its odd and off-color forms. 
+            It's an event that forces people to decide what will come next.
+            <p>This is a collection of stories from those of what's left:</p>
+            The visceral memories. The tears together, the laughs, the embraces that wrap you by those of the world that’s left behind. there’s always
+            something else; something odd, something funny, maybe. Something sad. Something small, or something big. 
+            Something about the journey, or something that makes it okay, if only for just a moment.</p>
+    </div>
+
+    <div id="rectangles">
+        <div class="rectangle" style="background-image: url('IMG/JOBEAU2.jpg');">
+            <div class="rectangle-text"><a href="1.html#" target="_blank"><i>JoeBeau</i></a></div>
+        </div>
+        <div class="rectangle" style="background-image: url('IMG/Nelson cover.jpg');">
+            <div class="rectangle-text"><a href="2.html#" target="_blank"><i>Nelson; A Death</i></a></div>
+        </div>
+        <div class="rectangle" style="background-image: url('IMG/Savvy Dad.jpg');">
+            <div class="rectangle-text"><a href="3.html#" target="_blank"><i>1995</i></a></div>
+        </div>
+        <div class="rectangle" style="background-image: url('IMG/Dad cover.jpg');">
+            <div class="rectangle-text"><a href="4.html#" target="_blank"><i>The Last Bear Hunt</i></a></div>
+        </div>
+    </div>
+
+
+    <script>
+        // Wait for the page to load before triggering the animation
+        window.addEventListener('load', function () {
+            document.getElementById('title').style.opacity = 1;
+            document.getElementById('title').style.transform = 'translateY(0)';
+
+            document.getElementById('intro-text').style.opacity = 1;
+            document.getElementById('intro-text').style.transform = 'translateY(0)';
+
+            document.getElementById('rectangles').style.opacity = 1;
+            document.getElementById('rectangles').style.transform = 'translateY(0)';
+        });
+
+        // Add scroll event listener to make title and intro text sticky
+        window.addEventListener('scroll', function () {
+            var title = document.getElementById('title');
+            var introText = document.getElementById('intro-text');
+            var scrollPosition = window.scrollY;
+
+            if (scrollPosition > title.offsetTop) {
+                title.style.position = 'fixed';
+                title.style.top = '0';
+            } else {
+                title.style.position = 'sticky';
+            }
+
+            if (scrollPosition > introText.offsetTop) {
+                introText.style.position = 'fixed';
+                introText.style.top = '50px';
+            } else {
+                introText.style.position = 'sticky';
+            }
+        });
+    </script>
+</body>
+
+</html>
